@@ -3,7 +3,7 @@ import {IBundleOptions} from 'father-build/src/types'
 const findPath = (moduleName) => {
   console.log(require.resolve(moduleName))
   const pathArr = require.resolve(moduleName).split('/');
-  console.log(pathArr)
+  // console.log(pathArr)
   const pathIndex = pathArr.findIndex(path => path === moduleName);
   console.log(pathIndex)
   const path = `${pathArr.slice(pathIndex).join('/')}`
@@ -12,7 +12,7 @@ const findPath = (moduleName) => {
 }
 
 const config: IBundleOptions = {
-  // esm: 'babel',
+  esm: 'babel',
   // cjs: 'babel',
   umd: {
     name: "demo",
@@ -21,6 +21,7 @@ const config: IBundleOptions = {
     }
   },
   extractCSS: true,
+  lessInBabelMode: true,
   extraBabelPlugins: [
     ['babel-plugin-import', {
       libraryName: 'antd',
@@ -32,6 +33,6 @@ const config: IBundleOptions = {
     [`${findPath('antd')}`]: ['Divider','_Divider','divider'],
   },
   runtimeHelpers: true,
-  disableTypeCheck: true,
+  disableTypeCheck: false,
 };
 export default config;
