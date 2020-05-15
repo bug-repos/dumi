@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
+    "antd": "^4.2.2",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {
