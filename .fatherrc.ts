@@ -13,7 +13,7 @@ const findPath = moduleName => {
 
 const config: IBundleOptions = {
   esm: 'babel',
-  // cjs: 'babel',
+  cjs: 'babel',
   // umd: {
   //   name: "demo",
   //   globals: {
